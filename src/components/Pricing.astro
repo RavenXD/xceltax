@@ -1,0 +1,173 @@
+---
+const plans = [
+  {
+    name: 'Starter',
+    tagline: 'Launch-ready essentials for new founders',
+    price: '$249',
+    cadence: '/month',
+    billed: 'Billed monthly',
+    highlight: false,
+    badge: null,
+    cta: 'Start with Starter',
+    features: [
+      'LLC formation paperwork and EIN setup',
+      'Monthly bookkeeping up to $250k revenue',
+      'Quarterly tax estimate guidance',
+      'Email support with 2-business-day SLA'
+    ]
+  },
+  {
+    name: 'Professional',
+    tagline: 'Our most popular plan for scaling independents',
+    price: '$349',
+    cadence: '/month',
+    billed: 'Billed monthly',
+    highlight: true,
+    badge: 'Most popular',
+    cta: 'Book onboarding call',
+    features: [
+      'LLC formation & S-Corp election strategy',
+      'Full-service bookkeeping and reconciliations',
+      'Payroll processing with quarterly filings',
+      'Tax planning plus annual filing',
+      'Dedicated finance pod & monthly reporting'
+    ]
+  },
+  {
+    name: 'Enterprise',
+    tagline: 'For multi-entity and high-growth operators',
+    price: '$499',
+    cadence: '/month',
+    billed: 'Billed monthly',
+    highlight: false,
+    badge: null,
+    cta: 'Talk to our team',
+    features: [
+      'Everything in Professional',
+      'Advanced tax strategy playbooks',
+      'Multi-entity bookkeeping & consolidations',
+      'Priority support (24/7)',
+      'Custom integrations & CFO sessions'
+    ]
+  }
+];
+
+const callouts = [
+  '30-day money-back guarantee',
+  'No onboarding fees',
+  'Save 15% when you prepay annually'
+];
+---
+<section
+  id="pricing"
+  class="relative overflow-hidden bg-gradient-to-b from-[#fff6fb] via-white to-[#f4f6ff] py-24"
+>
+  <div class="pointer-events-none absolute left-[8%] top-[-25%] h-[420px] w-[420px] rounded-full bg-primary/15 blur-3xl"></div>
+  <div class="pointer-events-none absolute right-[5%] bottom-[-35%] h-[520px] w-[520px] rounded-full bg-accent/20 blur-3xl"></div>
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-3xl text-center">
+      <span class="inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-primary">
+        Pricing
+      </span>
+      <h2 class="mt-6 text-4xl font-semibold text-slate-900 sm:text-5xl">Transparent plans aligned to where you are</h2>
+      <p class="mt-4 text-lg text-slate-600">
+        Every plan includes proactive compliance, real humans in the loop, and clarity on exactly what happens next.
+      </p>
+    </div>
+
+    <div class="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {plans.map((plan) => (
+        <article
+          class:list={[
+            'relative flex h-full flex-col overflow-hidden rounded-[2.5rem] border p-8 transition-all duration-300',
+            plan.highlight
+              ? 'border-transparent bg-gradient-to-br from-[#0b112c] via-[#141c3f] to-[#0a112c] text-white shadow-[0_60px_120px_-60px_rgba(9,14,36,0.8)] scale-[1.02]'
+              : 'border-white/70 bg-white/80 text-slate-900 shadow-[0_45px_90px_-70px_rgba(79,61,255,0.6)] hover:-translate-y-2'
+          ]}
+        >
+          {plan.highlight && (
+            <span class="absolute left-1/2 top-6 -translate-x-1/2 rounded-full border border-white/30 bg-white/10 px-5 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-white">
+              {plan.badge}
+            </span>
+          )}
+
+          <div class={plan.highlight ? 'mt-14 text-center' : 'text-center'}>
+            <h3 class={plan.highlight ? 'text-2xl font-semibold text-white' : 'text-2xl font-semibold text-slate-900'}>
+              {plan.name}
+            </h3>
+            <p class={plan.highlight ? 'mt-3 text-sm text-slate-200' : 'mt-3 text-sm text-slate-500'}>
+              {plan.tagline}
+            </p>
+            <div class="mt-6 flex items-baseline justify-center gap-2">
+              <span class={plan.highlight ? 'text-5xl font-semibold text-white' : 'text-5xl font-semibold text-slate-900'}>
+                {plan.price}
+              </span>
+              <span class={plan.highlight ? 'text-base text-slate-200' : 'text-base text-slate-500'}>{plan.cadence}</span>
+            </div>
+            <p class={plan.highlight ? 'mt-2 text-sm text-accent/90' : 'mt-2 text-sm text-primary'}>
+              {plan.billed}
+            </p>
+          </div>
+
+          <ul class="mt-10 flex flex-col gap-4 text-sm leading-relaxed">
+            {plan.features.map((feature) => (
+              <li
+                class:list={[
+                  'flex items-start gap-3 rounded-2xl border px-4 py-3',
+                  plan.highlight
+                    ? 'border-white/15 bg-white/5 text-slate-100'
+                    : 'border-slate-200/70 bg-white/70 text-slate-700'
+                ]}
+              >
+                <span
+                  class:list={[
+                    'mt-0.5 inline-flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full',
+                    plan.highlight ? 'bg-accent/20 text-accent' : 'bg-primary/10 text-primary'
+                  ]}
+                >
+                  <svg class="h-3 w-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.704 5.29a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-3.5-3.5a1 1 0 011.414-1.414L8 12.586l7.296-7.296a1 1 0 011.408 0z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                </span>
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div class="mt-10">
+            <a
+              href="/contact"
+              class:list={[
+                'inline-flex w-full items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition-all duration-300',
+                plan.highlight
+                  ? 'bg-gradient-to-r from-accent to-primary text-slate-900 shadow-[0_30px_60px_-35px_rgba(255,137,166,0.8)] hover:-translate-y-1'
+                  : 'border border-slate-200/80 bg-white/80 text-slate-900 hover:-translate-y-1 hover:border-primary/50 hover:text-primary'
+              ]}
+            >
+              {plan.cta}
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <div class="mt-16 flex flex-wrap items-center justify-center gap-4 text-sm font-medium text-slate-600">
+      {callouts.map((callout) => (
+        <span class="inline-flex items-center gap-2 rounded-full border border-slate-200/70 bg-white px-4 py-2 shadow-sm">
+          <svg class="h-4 w-4 text-primary" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              fill-rule="evenodd"
+              d="M16.704 5.29a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-3.5-3.5a1 1 0 011.414-1.414L8 12.586l7.296-7.296a1 1 0 011.408 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+          {callout}
+        </span>
+      ))}
+    </div>
+  </div>
+</section>

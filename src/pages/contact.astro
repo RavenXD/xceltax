@@ -1,0 +1,197 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import SiteScripts from '../components/SiteScripts.astro';
+---
+<BaseLayout
+  title="Talk with Xceltax — Schedule Your Finance Strategy Session"
+  description="Book time with the Xceltax finance pod to align bookkeeping, payroll, and tax strategy around your goals. Let’s build your plan."
+>
+  <Navigation />
+  <main>
+    <section class="relative overflow-hidden bg-[#0a112c] py-24 text-slate-100">
+      <div class="pointer-events-none absolute -left-24 top-[-35%] h-[520px] w-[520px] rounded-full bg-primary/35 blur-3xl"></div>
+      <div class="pointer-events-none absolute right-[-20%] top-10 h-[520px] w-[520px] rounded-full bg-accent/30 blur-3xl"></div>
+      <div class="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#0a112c] to-transparent"></div>
+
+      <div class="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+          <div class="space-y-6">
+            <span class="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-white/80">
+              Contact
+            </span>
+            <h1 class="text-4xl font-semibold leading-tight text-white sm:text-5xl">
+              Let’s design a proactive finance plan around the way you work.
+            </h1>
+            <p class="text-lg text-slate-300">
+              Share a few details and we’ll match you with a specialist pod. We typically respond within one business day with next
+              steps and a tailored agenda for your strategy session.
+            </p>
+            <div class="rounded-3xl border border-white/15 bg-white/5 p-6 backdrop-blur">
+              <div class="grid gap-6 sm:grid-cols-2">
+                <div>
+                  <p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-400">Response time</p>
+                  <p class="mt-2 text-lg font-semibold text-white">Under 24 hours</p>
+                  <p class="mt-2 text-sm text-slate-300">Dedicated coordinators route your request to the right finance pod.</p>
+                </div>
+                <div>
+                  <p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-400">Email us</p>
+                  <a
+                    href="mailto:hello@xceltax.com"
+                    class="mt-2 inline-flex items-center gap-2 text-lg font-semibold text-accent transition hover:text-accent/80"
+                  >
+                    hello@xceltax.com
+                  </a>
+                  <p class="mt-2 text-sm text-slate-300">Prefer async? Drop us a note and we’ll follow up with resources.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="relative overflow-hidden rounded-[2.5rem] border border-white/15 bg-white/10 p-8 shadow-[0_40px_80px_-50px_rgba(9,14,36,0.8)] backdrop-blur-xl"
+          >
+            <div class="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-white/5"></div>
+            <form class="relative space-y-6" method="post" action="#">
+              <div class="grid gap-6 sm:grid-cols-2">
+                <label class="block text-sm font-medium text-white/80">
+                  First name
+                  <input
+                    type="text"
+                    name="firstName"
+                    required
+                    placeholder="Jordan"
+                    class="mt-2 w-full rounded-2xl border border-white/20 bg-white/10 px-4 py-3 text-base text-white outline-none transition focus:border-accent/60 focus:bg-white/15"
+                  />
+                </label>
+                <label class="block text-sm font-medium text-white/80">
+                  Last name
+                  <input
+                    type="text"
+                    name="lastName"
+                    required
+                    placeholder="Rivera"
+                    class="mt-2 w-full rounded-2xl border border-white/20 bg-white/10 px-4 py-3 text-base text-white outline-none transition focus:border-accent/60 focus:bg-white/15"
+                  />
+                </label>
+              </div>
+
+              <label class="block text-sm font-medium text-white/80">
+                Work email
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="you@studio.co"
+                  class="mt-2 w-full rounded-2xl border border-white/20 bg-white/10 px-4 py-3 text-base text-white outline-none transition focus:border-accent/60 focus:bg-white/15"
+                />
+              </label>
+
+              <label class="block text-sm font-medium text-white/80">
+                Company name
+                <input
+                  type="text"
+                  name="company"
+                  placeholder="Studio Nimbus"
+                  class="mt-2 w-full rounded-2xl border border-white/20 bg-white/10 px-4 py-3 text-base text-white outline-none transition focus:border-accent/60 focus:bg-white/15"
+                />
+              </label>
+
+              <label class="block text-sm font-medium text-white/80">
+                Current annual revenue
+                <select
+                  name="revenue"
+                  class="mt-2 w-full rounded-2xl border border-white/20 bg-white/10 px-4 py-3 text-base text-white outline-none transition focus:border-accent/60 focus:bg-white/15"
+                >
+                  <option value="" selected class="bg-slate-900 text-slate-900">Select a range</option>
+                  <option value="under-250k" class="bg-slate-900 text-slate-100">$0 – $250k</option>
+                  <option value="250-750k" class="bg-slate-900 text-slate-100">$250k – $750k</option>
+                  <option value="750-1_5m" class="bg-slate-900 text-slate-100">$750k – $1.5M</option>
+                  <option value="1_5m-plus" class="bg-slate-900 text-slate-100">$1.5M+</option>
+                </select>
+              </label>
+
+              <label class="block text-sm font-medium text-white/80">
+                What should we focus on?
+                <textarea
+                  name="message"
+                  rows="4"
+                  placeholder="Tell us about your goals, timeline, and any current gaps we should know about."
+                  class="mt-2 w-full rounded-2xl border border-white/20 bg-white/10 px-4 py-3 text-base text-white outline-none transition focus:border-accent/60 focus:bg-white/15"
+                ></textarea>
+              </label>
+
+              <button
+                type="submit"
+                class="inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-primary to-accent px-8 py-3 text-base font-semibold text-slate-900 shadow-[0_30px_60px_-35px_rgba(255,137,166,0.8)] transition-transform duration-200 hover:-translate-y-1"
+              >
+                Submit and book strategy call
+              </button>
+
+              <p class="text-center text-xs text-white/70">
+                By submitting, you agree to receive updates from Xceltax. We’ll handle your info with care and never spam.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="relative overflow-hidden bg-gradient-to-b from-white via-[#f5f6ff] to-white py-24">
+      <div class="pointer-events-none absolute left-[5%] top-[-20%] h-72 w-72 rounded-full bg-primary/15 blur-3xl"></div>
+      <div class="pointer-events-none absolute right-[15%] bottom-[-25%] h-80 w-80 rounded-full bg-accent/20 blur-3xl"></div>
+      <div class="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-12 lg:grid-cols-3">
+          <div class="lg:col-span-2">
+            <h2 class="text-3xl font-semibold text-slate-900 sm:text-4xl">What happens after you reach out?</h2>
+            <p class="mt-4 text-lg text-slate-600">
+              We compress what used to be weeks of back-and-forth into three clear steps so you can make a confident decision fast.
+            </p>
+            <div class="mt-10 grid gap-6 md:grid-cols-3">
+              {[
+                {
+                  title: 'Discovery',
+                  copy: 'We align on your goals, current systems, and timeline in a 30-minute call with a lead strategist.'
+                },
+                {
+                  title: 'Blueprint',
+                  copy: 'Within 48 hours we deliver a tailored scope, cost, and rollout plan across taxes, payroll, and books.'
+                },
+                {
+                  title: 'Activation',
+                  copy: 'We assemble your dedicated pod, connect tools, and begin onboarding within the first week.'
+                }
+              ].map(({ title, copy }, index) => (
+                <div class="rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-[0_20px_45px_-40px_rgba(79,61,255,0.6)]">
+                  <span class="text-sm font-semibold uppercase tracking-[0.3em] text-primary">{String(index + 1).padStart(2, '0')}</span>
+                  <h3 class="mt-4 text-xl font-semibold text-slate-900">{title}</h3>
+                  <p class="mt-3 text-sm leading-relaxed text-slate-600">{copy}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div class="rounded-[2.25rem] border border-slate-200/60 bg-white/80 p-8 shadow-[0_40px_80px_-60px_rgba(79,61,255,0.55)]">
+            <p class="text-xs font-semibold uppercase tracking-[0.35em] text-primary">Need something else?</p>
+            <h3 class="mt-4 text-2xl font-semibold text-slate-900">Existing client support</h3>
+            <p class="mt-3 text-sm text-slate-600">
+              Already working with us? Jump into your client workspace or message us in the shared Slack channel for the fastest
+              response.
+            </p>
+            <div class="mt-6 space-y-3 text-sm text-slate-600">
+              <a class="block rounded-2xl border border-slate-200/70 bg-white px-4 py-3 font-semibold text-primary transition hover:-translate-y-0.5 hover:border-primary/40" href="#">
+                Open client workspace
+              </a>
+              <a class="block rounded-2xl border border-slate-200/70 bg-white px-4 py-3 font-semibold text-primary transition hover:-translate-y-0.5 hover:border-primary/40" href="mailto:support@xceltax.com">
+                support@xceltax.com
+              </a>
+            </div>
+            <p class="mt-8 text-xs text-slate-500">Support coverage: 7 days a week · 8am–8pm PT</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+  <SiteScripts />
+</BaseLayout>

@@ -1,0 +1,92 @@
+<section
+  id="features"
+  class="relative overflow-hidden bg-gradient-to-b from-white via-[#f6f7ff] to-white py-24"
+>
+  <div class="pointer-events-none absolute left-[10%] top-[-20%] h-72 w-72 rounded-full bg-primary/10 blur-3xl"></div>
+  <div class="pointer-events-none absolute right-[10%] bottom-[-25%] h-96 w-96 rounded-full bg-accent/15 blur-3xl"></div>
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-3xl text-center">
+      <span class="inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-primary">
+        Why Xceltax
+      </span>
+      <h2 class="mt-6 text-4xl font-semibold text-slate-900 sm:text-5xl">A proactive finance team in your corner</h2>
+      <p class="mt-4 text-lg text-slate-600">
+        Built for lean teams who need the confidence of an enterprise finance department—without building one from scratch.
+      </p>
+    </div>
+
+    <div class="mt-16 grid items-center gap-16 lg:grid-cols-[1.1fr_0.9fr]">
+      <div class="space-y-10">
+        {[
+          {
+            title: 'All-in-one workflows',
+            description: "Entity, payroll, tax, and bookkeeping live inside a single workspace with the same pod watching every moving part."
+          },
+          {
+            title: 'Specialists who ship fast',
+            description: "CPAs, payroll experts, and finance analysts aligned to your industry so answers land in hours—not days."
+          },
+          {
+            title: 'Forward-looking planning',
+            description: "Model out hiring, distributions, and cash decisions before you commit with scenario dashboards that stay current."
+          },
+          {
+            title: 'Audit-ready, always',
+            description: "Tight controls, reconciled books, and compliance monitoring keep every filing on track and stress-free."
+          }
+        ].map(({ title, description }, index) => (
+          <div class="flex gap-5">
+            <div
+              class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-accent font-semibold text-slate-900 shadow-lg shadow-primary/30"
+            >
+              {String(index + 1).padStart(2, '0')}
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-slate-900">{title}</h3>
+              <p class="mt-3 text-base leading-relaxed text-slate-600">{description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div
+        class="relative overflow-hidden rounded-[2.25rem] border border-white/60 bg-white/90 p-10 shadow-[0_40px_80px_-60px_rgba(79,61,255,0.55)]"
+      >
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10"></div>
+        <div class="relative text-center">
+          <img
+            src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&amp;fit=crop&amp;w=480&amp;q=80"
+            alt="Founder reviewing growth metrics"
+            class="mx-auto h-24 w-24 rounded-3xl object-cover shadow-lg shadow-primary/30"
+          />
+          <h3 class="mt-6 text-2xl font-semibold text-slate-900">What every plan delivers</h3>
+          <p class="mt-3 text-sm font-medium uppercase tracking-[0.3em] text-slate-500">
+            No add-ons. No hidden upgrades.
+          </p>
+        </div>
+
+        <div class="relative mt-10 grid gap-4">
+          {[
+            'LLC formation + annual compliance',
+            'Monthly bookkeeping with quality checks',
+            'Quarterly cash and tax forecasting',
+            'Payroll implementation and support',
+            'Dedicated strategist + response SLA',
+            'Investor-ready financial statements'
+          ].map((item) => (
+            <div class="flex items-start gap-3 rounded-xl border border-slate-200/60 bg-white/70 px-4 py-3 shadow-sm">
+              <svg class="mt-1 h-5 w-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  fill-rule="evenodd"
+                  d="M16.704 5.29a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-3.5-3.5a1 1 0 011.414-1.414L8 12.586l7.296-7.296a1 1 0 011.408 0z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <span class="text-sm font-medium text-slate-700">{item}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

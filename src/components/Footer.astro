@@ -1,0 +1,102 @@
+---
+const footerLinks = [
+  {
+    title: 'Services',
+    links: [
+      { label: 'Business formation', href: '#services' },
+      { label: 'Tax optimization', href: '#services' },
+      { label: 'Bookkeeping', href: '#services' },
+      { label: 'Payroll operations', href: '#services' },
+      { label: 'Financial reporting', href: '#features' }
+    ]
+  },
+  {
+    title: 'Resources',
+    links: [
+      { label: 'Resource library', href: '#blog' },
+      { label: 'S-Corp guide', href: '/blog/s-corp-election-guide' },
+      { label: 'Tax calculator', href: '#' },
+      { label: 'Case studies', href: '#testimonials' },
+      { label: 'Webinars', href: '#' }
+    ]
+  },
+  {
+    title: 'Company',
+    links: [
+      { label: 'About', href: '#about' },
+      { label: 'Careers', href: '#' },
+      { label: 'Contact', href: '/contact' },
+      { label: 'Privacy policy', href: '#' },
+      { label: 'Terms of service', href: '#' }
+    ]
+  }
+];
+
+const socials = [
+  { name: 'twitter', href: 'https://twitter.com' },
+  { name: 'linkedin', href: 'https://linkedin.com' }
+];
+---
+<footer class="relative overflow-hidden bg-[#050c20] py-20 text-slate-100">
+  <div class="pointer-events-none absolute -left-32 top-[-40%] h-[420px] w-[420px] rounded-full bg-primary/35 blur-3xl"></div>
+  <div class="pointer-events-none absolute right-[-20%] bottom-[-30%] h-[520px] w-[520px] rounded-full bg-accent/30 blur-3xl"></div>
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="grid gap-12 lg:grid-cols-[1.2fr_2fr]">
+      <div>
+        <div class="flex items-center gap-3">
+          <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-accent text-slate-900 shadow-lg shadow-primary/30">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.35em] text-white/60">Xceltax</p>
+            <p class="text-xl font-semibold text-white">Financial OS for independent entrepreneurs</p>
+          </div>
+        </div>
+        <p class="mt-6 max-w-md text-sm leading-relaxed text-white/70">
+          We pair proactive finance operators with modern software so lean teams can stay compliant, maximize tax savings, and move faster with confidence.
+        </p>
+        <div class="mt-8 flex gap-4">
+          {socials.map(({ name, href }) => (
+            <a
+              href={href}
+              class="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/20 bg-white/5 text-white transition-colors duration-200 hover:border-white/40 hover:bg-white/20"
+            >
+              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                {name === 'twitter' && (
+                  <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                )}
+                {name === 'linkedin' && (
+                  <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                )}
+              </svg>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        {footerLinks.map((column) => (
+          <div>
+            <h4 class="text-sm font-semibold uppercase tracking-[0.3em] text-white/70">{column.title}</h4>
+            <ul class="mt-5 space-y-3 text-sm text-white/70">
+              {column.links.map((link) => (
+                <li>
+                  <a class="transition-colors duration-200 hover:text-accent" href={link.href}>
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="mt-16 flex flex-col gap-4 border-t border-white/10 pt-8 text-sm text-white/60 md:flex-row md:items-center md:justify-between">
+      <p>&copy; {new Date().getFullYear()} Xceltax. All rights reserved.</p>
+      <p>Made with care for independent entrepreneurs everywhere.</p>
+    </div>
+  </div>
+</footer>
